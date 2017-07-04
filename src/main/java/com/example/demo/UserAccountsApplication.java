@@ -21,10 +21,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 
+@SuppressWarnings("restriction")
 @SpringBootApplication
 public class UserAccountsApplication extends Application{
 	 private Teller teller;
-	 private static ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+	 private static ApplicationContext context = new ClassPathXmlApplicationContext("com/example/demo/context.xml");
 	 
 	 private PrintStream stream = context.getBean("stream", java.io.PrintStream.class);
 	 
@@ -36,7 +37,9 @@ public class UserAccountsApplication extends Application{
 		 this.stream = stream;
 	 }
 	 */
-	 
+	 public Teller getTeller(){
+		 return teller;
+	 }
 	 
 	 
 	 @Override

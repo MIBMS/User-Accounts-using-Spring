@@ -23,13 +23,13 @@
    
 
 
-	<!--  <bean id = "application" class = "com.example.demo.UserAccountsApplication">
-		<constructor-arg ref = "printstream" />
+	<!-- <bean id = "application" class = "com.example.demo.UserAccountsApplication">-->
+		<!--  <constructor-arg ref = "printstream" />
 		<constructor-arg><util:constant static-field="java.lang.System.out" /></constructor-arg>
 		 <property name="stream">
 			  value = "#{T(System).out}">
 			<<util:constant static-field="java.lang.System.out" />
-		</property>
-	</bean>-->
+		</property>-->
+	<!-- </bean>-->
 
 </beans>
