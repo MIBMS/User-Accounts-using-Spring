@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation = "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+	
+
+	<bean id = "user" class = "com.example.demo.User" scope="prototype">
+		<constructor-arg value = ""/>
+	</bean>
+   
+	<bean id = "account" class = "com.example.demo.Account" scope="prototype">
+		<property name = "number" value = "0"/>
+	</bean>
+   
+	<bean id = "teller" class = "com.example.demo.Teller">
+		<property name="stream" value = "#{T(System).out}" />
+	</bean>
+	
+	<bean id = "stream" class = "java.io.PrintStream"><constructor-arg><util:constant static-field="java.lang.System.out" /></constructor-arg></bean>
+   
+
+
+	<!--  <bean id = "application" class = "com.example.demo.UserAccountsApplication">
+		<constructor-arg ref = "printstream" />
+		<constructor-arg><util:constant static-field="java.lang.System.out" /></constructor-arg>
+		 <property name="stream">
+			  value = "#{T(System).out}">
+			<<util:constant static-field="java.lang.System.out" />
+		</property>
+	</bean>-->
+
+</beans>
